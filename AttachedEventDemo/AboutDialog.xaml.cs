@@ -36,7 +36,7 @@ namespace AttachedEventDemo {
             else if (e.RoutedEvent == ListBox.SelectionChangedEvent) {
                 SelectionChangedEventArgs scvg = (SelectionChangedEventArgs)e;
                 if (scvg.AddedItems.Count > 0)
-                    MessageBox.Show("You just selected " + scvg.AddedItems[0]);
+                    MessageBox.Show("You have just selected " + scvg.AddedItems[0]);
             }
             else
                 MessageBox.Show("Unknown event.");
