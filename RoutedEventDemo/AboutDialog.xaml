@@ -1,0 +1,38 @@
+﻿<Window x:Class="RoutedEventDemo.AboutDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="About WPF Unleashed" SizeToContent="WidthAndHeight" Background="OrangeRed" MouseRightButtonDown="Window_MouseRightButtonDown">
+    <StackPanel Margin="5">
+        <Label FontWeight="Bold" FontSize="20" Foreground="White">
+            WPF Unleashed (Version 3.0)
+        </Label>
+        <Label>2006 SAMS Publishing</Label>
+        <Label>Installed Chapters:</Label>
+        <ListBox>
+            <ListBoxItem>Chapter 1</ListBoxItem>
+            <ListBoxItem>Chapter 2</ListBoxItem>
+        </ListBox>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button MinWidth="75" Margin="10">Help</Button>
+            <Button MinWidth="75" Margin="10" IsDefault="True" Click="Button_Click" ToolTip="click me now">OK</Button>
+        </StackPanel>
+        <Label Target="{Binding ElementName=userNameBox}">_User name</Label>
+        <TextBox x:Name="userNameBox" />
+        <CheckBox>
+            Checkbox
+            <CheckBox.ToolTip>
+                <StackPanel>
+                    <Label FontWeight="Bold" Background="Blue" Foreground="White">The checkbox</Label>
+                    <TextBlock Padding="10" TextWrapping="WrapWithOverflow" Width="200">
+                        Checkbox is a familiar control. But in WPF, it is not much more than a ToggleButton styled differently!
+                    </TextBlock>
+                    <Line Stroke="Black" StrokeThickness="1" X2="200" />
+                    <StackPanel Orientation="Horizontal">
+                        <Label FontWeight="Bold">Press F1 for more help.</Label>
+                    </StackPanel>
+                </StackPanel>
+            </CheckBox.ToolTip>
+        </CheckBox>
+        <StatusBar>You have successfully registered this product.</StatusBar>
+    </StackPanel>
+</Window>
